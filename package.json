@@ -1,8 +1,8 @@
 {
   "name": "hello-quasar2",
   "version": "0.0.1",
-  "description": "Hello World for Quasar 2",
-  "productName": "Hello Quasar2",
+  "description": "Hello World Quasar2 ",
+  "productName": "Quasar 2 Tutorial",
   "author": "Mason Hsieh <benius@gmail.com>",
   "private": true,
   "scripts": {

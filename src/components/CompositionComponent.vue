@@ -2,7 +2,7 @@
   <div>
     <p>{{ title }}</p>
     <ul>
-      <li v-for='todo in todos' :key='todo.id' @click='increment'>
+      <li v-for="todo in todos" :key="todo.id" @click="increment">
         {{ todo.id }} - {{ todo.content }}
       </li>
     </ul>
@@ -12,15 +12,21 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { computed, defineComponent, PropType, ref, Ref, toRef } from 'vue';
-import { Meta, Todo } from './models';
+<script lang="ts">
+import {
+  defineComponent,
+  PropType,
+  computed,
+  ref,
+  toRef,
+  Ref,
+} from 'vue';
+import { Todo, Meta } from './models';
 
 function useClickCount() {
   const clickCount = ref(0);
-
   function increment() {
-    clickCount.value += 1;
+    clickCount.value += 1
     return clickCount.value;
   }
 
@@ -53,6 +59,6 @@ export default defineComponent({
   },
   setup(props) {
     return { ...useClickCount(), ...useDisplayTodo(toRef(props, 'todos')) };
-  }
+  },
 });
 </script>

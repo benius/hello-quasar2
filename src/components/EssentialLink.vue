@@ -1,15 +1,15 @@
 <template>
   <q-item
     clickable
-    tag='a'
-    target='_blank'
-    :href='link'
+    tag="a"
+    target="_blank"
+    :href="link"
   >
     <q-item-section
-      v-if='icon'
+      v-if="icon"
       avatar
     >
-      <q-icon :name='icon' />
+      <q-icon :name="icon" />
     </q-item-section>
 
     <q-item-section>
@@ -21,8 +21,8 @@
   </q-item>
 </template>
 
-<script lang='ts'>
-import { defineComponent } from 'vue';
+<script lang="ts">
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'EssentialLink',
@@ -47,5 +47,5 @@ export default defineComponent({
       default: ''
     }
   }
-});
+})
 </script>

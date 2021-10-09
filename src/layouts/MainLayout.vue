@@ -1,14 +1,14 @@
 <template>
-  <q-layout view='lHh Lpr lFf'>
+  <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
         <q-btn
           flat
           dense
           round
-          icon='menu'
-          aria-label='Menu'
-          @click='toggleLeftDrawer'
+          icon="menu"
+          aria-label="Menu"
+          @click="toggleLeftDrawer"
         />
 
         <q-toolbar-title>
@@ -20,7 +20,7 @@
     </q-header>
 
     <q-drawer
-      v-model='leftDrawerOpen'
+      v-model="leftDrawerOpen"
       show-if-above
       bordered
     >
@@ -32,9 +32,9 @@
         </q-item-label>
 
         <EssentialLink
-          v-for='link in essentialLinks'
-          :key='link.title'
-          v-bind='link'
+          v-for="link in essentialLinks"
+          :key="link.title"
+          v-bind="link"
         />
       </q-list>
     </q-drawer>
@@ -45,9 +45,8 @@
   </q-layout>
 </template>
 
-<script lang='ts'>
-import EssentialLink from 'components/EssentialLink.vue';
-import { defineComponent, ref } from 'vue';
+<script lang="ts">
+import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
@@ -94,6 +93,8 @@ const linksList = [
   }
 ];
 
+import { defineComponent, ref } from 'vue'
+
 export default defineComponent({
   name: 'MainLayout',
 
@@ -101,16 +102,16 @@ export default defineComponent({
     EssentialLink
   },
 
-  setup() {
-    const leftDrawerOpen = ref(false);
+  setup () {
+    const leftDrawerOpen = ref(false)
 
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value;
+      toggleLeftDrawer () {
+        leftDrawerOpen.value = !leftDrawerOpen.value
       }
-    };
+    }
   }
-});
+})
 </script>
