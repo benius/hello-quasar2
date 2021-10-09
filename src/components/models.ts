@@ -6,3 +6,9 @@ export interface Todo {
 export interface Meta {
   totalCount: number;
 }
+
+export interface TreeNode {
+  title: string;
+  url?: string;
+  children?: TreeNode[];
+}
