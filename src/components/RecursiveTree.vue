@@ -19,7 +19,7 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, PropType, reactive } from 'vue';
+import { defineComponent, PropType, reactive, onMounted } from 'vue';
 import { TreeNode } from 'components/models';
 
 export default defineComponent ({
@@ -37,6 +37,12 @@ export default defineComponent ({
   setup() {
     let openState = reactive({
       isOpen: false
+    })
+
+    onMounted(() => {
+        void fetch('/open-data/dq_download_json.php?nid=123026&md5_url=4d8de527a0bcd8a7b1aeae91120f021d')
+          .then(res => res.json())
+          .then(data => console.log(data));
     })
 
     return {
